@@ -1,10 +1,12 @@
+package basic
+
 class Product(val name : String, val price : Int)
 
 interface Wheel {
     fun roll()
 }
 
-interface Cart : Wheel{
+interface Cart : Wheel {
 
     var coin: Int
     val weight: String
@@ -32,7 +34,7 @@ interface Order{
     fun printId() = println("5678")
 }
 
-class MyCart(override var coin: Int) : Cart, Order{
+class MyCart(override var coin: Int) : Cart, Order {
     override fun add(product: Product) {
         if(coin <=0) println("코인을 넣어주세요")
         else println("${product.name}이(가) 카트에 추가됐습니다.")
